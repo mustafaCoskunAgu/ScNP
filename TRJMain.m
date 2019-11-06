@@ -1,6 +1,5 @@
 clear;
 clc;
-%This is the inverse of Cora Normalized matrix
 % First Run this code and save the file 
 %Then go to https://github.com/klicperajo/ppnp
 %And paste below code into propagation.py given by Klicpera et al
@@ -17,6 +16,9 @@ clc;
 %             ppr_mat_tf = tf.constant(self.ppr_mat, dtype=tf.float32)
 %             ppr_drop = tf.nn.dropout(ppr_mat_tf, keep_prob)
 %             return ppr_drop @ Z
+%PPRMatrix is the inverse of Cora Normalized matrix
+%Note: You can either compute this inverse by Coskun et al, https://dl.acm.org/citation.cfm?id=2939828
+%or https://dl.acm.org/citation.cfm?id=3228385
 load('PPMatrix.mat');
 PPRMatrix = prop_ppnp.ppr_mat;
 
