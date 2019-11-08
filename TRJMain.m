@@ -17,8 +17,26 @@ clc;
 %             ppr_drop = tf.nn.dropout(ppr_mat_tf, keep_prob)
 %             return ppr_drop @ Z
 %PPRMatrix is the inverse of Cora Normalized matrix
-%Note: You can either compute this inverse by Coskun et al, https://dl.acm.org/citation.cfm?id=2939828
-%or https://dl.acm.org/citation.cfm?id=3228385
+%Note: You can either compute this inverse by Coskun et al, 
+%@inproceedings{CoskunKdd,
+% title={Efficient processing of network proximity queries via chebyshev acceleration},
+%  author={Coskun, Mustafa and Grama, Ananth and Koyuturk, Mehmet},
+%  booktitle={Proceedings of the 22Nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+%  pages={1515--1524},
+%  year={2016},
+%  organization={ACM}
+%}
+%or
+%@article{CoskunVldb,
+% title={Indexed fast network proximity querying},
+%  author={Co{\c{s}}kun, Mustafa and Grama, Ananth and Koyut{\"u}rk, Mehmet},
+%  journal={Proceedings of the VLDB Endowment},
+%  volume={11},
+%  number={8},
+%  pages={840--852},
+%  year={2018},
+%  publisher={VLDB Endowment}
+%}
 load('PPMatrix.mat');
 PPRMatrix = prop_ppnp.ppr_mat;
 
