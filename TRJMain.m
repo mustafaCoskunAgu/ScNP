@@ -37,6 +37,20 @@ clc;
 %  year={2018},
 %  publisher={VLDB Endowment}
 %}
+%Or small matrices you can use inv(I-\alpha*P) in matlab or 
+%You can use following function in python:
+%def calc_A_hat(adj_matrix: sp.spmatrix) -> sp.spmatrix:
+%    nnodes = adj_matrix.shape[0]
+%    A = adj_matrix + sp.eye(nnodes)
+%    D_vec = np.sum(A, axis=1).A1
+%    D_vec_invsqrt_corr = 1 / np.sqrt(D_vec)
+%    D_invsqrt_corr = sp.diags(D_vec_invsqrt_corr)
+%    return D_invsqrt_corr @ A @ D_invsqrt_corr
+%def calc_ppr_exact(adj_matrix: sp.spmatrix, alpha: float) -> np.ndarray:
+%    nnodes = adj_matrix.shape[0]
+%    M = calc_A_hat(adj_matrix)
+%    A_inner = sp.eye(nnodes) - (1 - alpha) * M
+%    return alpha * np.linalg.inv(A_inner.toarray())
 load('PPMatrix.mat');
 PPRMatrix = prop_ppnp.ppr_mat;
 
